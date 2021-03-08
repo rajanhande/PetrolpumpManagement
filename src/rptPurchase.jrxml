@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0ac9c17b-cd70-43a3-93f2-1691676656a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     purchase_item.`id` AS purchase_item_id,
+     purchase_item.`date` AS purchase_item_date,
+     purchase_item.`supplier_name` AS purchase_item_supplier_name,
+     purchase_item.`oil_type` AS purchase_item_oil_type,
+     purchase_item.`litre` AS purchase_item_litre,
+     purchase_item.`purchase_rate` AS purchase_item_purchase_rate,
+     purchase_item.`total_amount` AS purchase_item_total_amount
+FROM
+     `purchase_item` purchase_item]]>
+	</queryString>
+	<field name="purchase_item_id" class="java.lang.Integer"/>
+	<field name="purchase_item_date" class="java.sql.Date"/>
+	<field name="purchase_item_supplier_name" class="java.lang.String"/>
+	<field name="purchase_item_oil_type" class="java.lang.String"/>
+	<field name="purchase_item_litre" class="java.lang.Double"/>
+	<field name="purchase_item_purchase_rate" class="java.lang.Double"/>
+	<field name="purchase_item_total_amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="785ee9ac-e256-412f-8051-0706b84e172d"/>
+			</line>
+			<line>
+				<reportElement x="0" y="48" width="555" height="1" uuid="5b8bba4c-2d55-4eea-ae59-1b3de452bb1f"/>
+			</line>
+			<staticText>
+				<reportElement x="225" y="16" width="121" height="20" uuid="6f6ef7b4-1571-441f-b04b-32f32cce30f5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purchase Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="45" width="555" height="1" uuid="f1defb64-6dc3-4cdd-8965-960c12ddf309"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="14" width="33" height="20" uuid="5d0497d0-9cd5-477d-9d3f-f7ebc56d0808"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="14" width="100" height="20" uuid="4c9f0946-d4b6-4ec3-83f2-8ddc1b211f12"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="14" width="100" height="20" uuid="9a0dcf85-c6a8-4708-8fd5-d87364fdf605"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="14" width="69" height="20" uuid="a19b6f01-f762-40e5-a782-d75734f8d4dd"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oil Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="14" width="70" height="20" uuid="8640bc05-6d61-48f4-8a7b-f75018660e02"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Litre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="14" width="58" height="20" uuid="d30a3f86-5844-4824-827c-d6aa11896c54"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="14" width="62" height="20" uuid="ca1fbc92-b9e2-4c81-9b9b-23ae6c5c3df0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="46" width="555" height="1" uuid="e4d7a697-8ab3-497d-8cd7-37eb5dbd28a2"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="15" width="33" height="20" uuid="a0beee74-92b4-4f7b-a784-a9b1c20d27e8"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="45" y="15" width="88" height="20" uuid="0b88b9ec-b659-41aa-b8e1-49cf941f1420"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="156" y="15" width="100" height="20" uuid="8a26752c-ef29-4a68-9054-0c14b0e04de1"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="15" width="69" height="20" uuid="452a27e5-824c-4156-b341-e30b4d325c15"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_oil_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="15" width="70" height="20" uuid="3fd6d821-b676-4f8f-9747-e518e94d1645"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_litre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="15" width="58" height="20" uuid="09e9ecc2-f6d2-4697-b8a7-7ed20783cf9c"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_purchase_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="15" width="62" height="20" uuid="458170bc-1f62-4043-b0a1-e6e8e35194e9"/>
+				<textFieldExpression><![CDATA[$F{purchase_item_total_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="2" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

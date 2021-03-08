@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5a1604b-4e0e-424e-bbc8-1af4634d852f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     add_rate.`id` AS add_rate_id,
+     add_rate.`date` AS add_rate_date,
+     add_rate.`rate` AS add_rate_rate,
+     add_rate.`item_type` AS add_rate_item_type
+FROM
+     `add_rate` add_rate]]>
+	</queryString>
+	<field name="add_rate_id" class="java.lang.Integer"/>
+	<field name="add_rate_date" class="java.sql.Date"/>
+	<field name="add_rate_rate" class="java.lang.Float"/>
+	<field name="add_rate_item_type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="1b745bf9-1451-41f3-bcdf-728c4b7d9031"/>
+			</line>
+			<line>
+				<reportElement x="0" y="49" width="555" height="1" uuid="64ccb459-0328-4996-bf0e-efb7f63bb24b"/>
+			</line>
+			<staticText>
+				<reportElement x="210" y="11" width="137" height="28" uuid="0c14cad8-a1fc-4940-a686-25542bf7e7a8"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate Report ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="9" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="45" width="555" height="1" uuid="b00b93c9-4511-4a04-bf2d-a8fcb2932af8"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="59" height="20" uuid="4e750d9c-c40e-4408-8f40-f77c08d2ac55"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="10" width="80" height="20" uuid="810c6f3e-cdb2-4c6d-a8f9-084601651152"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="10" width="54" height="20" uuid="44085e08-768a-409e-8ed6-1d19b06a06e6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="10" width="100" height="20" uuid="4d27aab0-c780-4168-8e8e-253a7795e98f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Type]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="49" width="555" height="1" uuid="8d674ead-e665-461c-9387-af564837db9a"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="10" width="59" height="20" uuid="1ed02473-208d-412a-b6bd-29c00b61ce90"/>
+				<textFieldExpression><![CDATA[$F{add_rate_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="110" y="10" width="100" height="20" uuid="e3a7e0aa-fa7e-47f5-978d-34a315e82d48"/>
+				<textFieldExpression><![CDATA[$F{add_rate_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="10" width="100" height="20" uuid="b7c4af8f-fdf7-407f-a2cb-61a22a0ea92c"/>
+				<textFieldExpression><![CDATA[$F{add_rate_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="10" width="111" height="20" uuid="be4bf8c1-f15f-4186-9d93-5230e8c0896c"/>
+				<textFieldExpression><![CDATA[$F{add_rate_item_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="11" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

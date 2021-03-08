@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e3b8a26-178a-4b00-9bfa-7a2d23c2e4c4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     daily_transaction.`id` AS daily_transaction_id,
+     daily_transaction.`date` AS daily_transaction_date,
+     daily_transaction.`oil_type` AS daily_transaction_oil_type,
+     daily_transaction.`litre` AS daily_transaction_litre,
+     daily_transaction.`rate` AS daily_transaction_rate,
+     daily_transaction.`amount` AS daily_transaction_amount
+FROM
+     `daily_transaction` daily_transaction]]>
+	</queryString>
+	<field name="daily_transaction_id" class="java.lang.Integer"/>
+	<field name="daily_transaction_date" class="java.sql.Date"/>
+	<field name="daily_transaction_oil_type" class="java.lang.String"/>
+	<field name="daily_transaction_litre" class="java.lang.Double"/>
+	<field name="daily_transaction_rate" class="java.lang.Double"/>
+	<field name="daily_transaction_amount" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="59" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="b12e4050-1024-4d9a-ba80-7bdd9afe429c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="58" width="555" height="1" uuid="064f8f2e-63f3-43c2-ba33-b180433f66cb"/>
+			</line>
+			<staticText>
+				<reportElement x="195" y="15" width="162" height="26" uuid="c9250da7-7219-4711-8946-b86326788d41"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Transaction Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="10" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="51" width="555" height="1" uuid="c7f8ba77-a28b-49e9-9376-357a0b18a898"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="17" width="40" height="20" uuid="725a49d6-a934-43e9-b23d-cacfc4c40c17"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="17" width="79" height="20" uuid="edbd1b37-15c3-465a-87d3-5c72fa9f94d0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="17" width="63" height="20" uuid="5258c44a-8d00-421c-b19f-e51831903fc1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Oil Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="17" width="70" height="20" uuid="371dc4b1-8642-4c93-90b1-cd04442aef2d"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Litre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="17" width="65" height="20" uuid="445d3839-3afe-437a-986c-04e3e3059af1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="477" y="17" width="78" height="20" uuid="15b288bf-087d-4121-b05a-5be8fa1e049a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="47" width="555" height="1" uuid="89893b3e-24d6-4840-9aa7-ddcf94cadc5f"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="15" width="40" height="20" uuid="94464bf7-757e-4246-b76e-f456a4458189"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="66" y="15" width="100" height="20" uuid="fe9df25b-2fa0-4439-9c25-8f41c3adbe79"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="15" width="63" height="20" uuid="4a3ac023-1387-47e9-adf4-095c99bc2ef9"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_oil_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="15" width="70" height="20" uuid="6eff24ca-d754-4069-84a5-6ed378982d41"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_litre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="15" width="65" height="20" uuid="5685fb40-cfb2-47a2-80b7-661bccb1bb72"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="15" width="78" height="20" uuid="6fc477ae-7fd1-4209-b5b0-5275b04aba91"/>
+				<textFieldExpression><![CDATA[$F{daily_transaction_amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="13" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="11" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
